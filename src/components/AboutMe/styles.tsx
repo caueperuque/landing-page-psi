@@ -23,9 +23,9 @@ export const AboutMeContentComponent = styled.div`
 `;
 
 export const TextContentComponent = styled.div`
-    border: 1px solid red;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 80%;
-`
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+`;
