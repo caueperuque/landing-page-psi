@@ -10,11 +10,11 @@ export const HeroLayoutComponent = styled.div`
 
   hr {
     z-index: 2;
-    width: 30%;
-    border: 2px solid ${(props) => props.theme["beige-600"]};
+    width: 70%;
+    border: 0.5px solid ${(props) => props.theme["beige-600"]};
     /* margin-bottom: 4rem; */
     position: absolute;
-    top: 34.3rem;
+    top: 28rem;
     opacity: 1;
   }
 
@@ -28,8 +28,9 @@ export const HeroLayoutComponent = styled.div`
       font-weight: 700;
       font-style: normal;
     }
+
     color: ${(props) => props.theme["beige-600"]};
-    font-size: 5rem;
+    font-size: 3rem;
     font-family: "AmsterdamTwo", sans-serif;
   }
 `;
@@ -40,7 +41,7 @@ export const HeroBackgroundImage = styled.div`
   height: 100vh;
   width: 100%;
   position: absolute;
-  background-image: url("/src/components/Hero/bg.jpg");
+  background-image: url("/src/components/Hero/bg-mobile.jpeg");
   background-size: cover;
   opacity: 0.1;
 `;
@@ -56,7 +57,7 @@ export const HeroContentComponent = styled.div`
     color: ${(props) => props.theme["beige-600"]};
     background-color: transparent;
 
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     /* margin-top: 2rem; */
