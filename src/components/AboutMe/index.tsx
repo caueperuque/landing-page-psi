@@ -1,6 +1,8 @@
 import {
   AboutMeContentComponent,
   AboutMeLayoutComponent,
+  AboutMeTextComponent,
+  AboutMeTextHeaderComponent,
   ImageComponent,
   TextContentComponent,
 } from "./styles";
@@ -10,13 +12,13 @@ export const AboutMe = () => {
     <AboutMeLayoutComponent>
       <AboutMeContentComponent>
         <ImageComponent>
-          <img src="/src/components/AboutMe/profile.jpeg" width={"350rem"} />
+          <img src="/src/components/AboutMe/profile.jpeg" />
         </ImageComponent>
-        <div className="about_text">
-          <div className="about_header">
+        <AboutMeTextComponent>
+          <AboutMeTextHeaderComponent>
             <h1>Sobre mim</h1>
             <span>CRP: 06/133754</span>
-          </div>
+          </AboutMeTextHeaderComponent>
           <TextContentComponent>
             <p>
               Sou Psicóloga e Psicanalista, graduada pela UNOESTE (2011-2016),
@@ -45,7 +47,7 @@ export const AboutMe = () => {
               meu consultório particular na cidade de Presidente Prudente - SP.
             </p>
           </TextContentComponent>
-        </div>
+        </AboutMeTextComponent>
       </AboutMeContentComponent>
     </AboutMeLayoutComponent>
   );
