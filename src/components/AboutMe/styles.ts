@@ -67,8 +67,11 @@ export const AboutMeLayoutComponent = styled.section`
 `;
 
 export const AboutMeContentComponent = styled.div`
-  background-color: ${(props) => props.theme["beige-300"]};
-`;
+ background: linear-gradient(
+    180deg,
+    ${(props) => props.theme["beige-300"]} 0%,
+    ${(props) => props.theme["beige-400"]} 100%
+  );`;
 
 export const AboutMeTextHeaderComponent = styled.div`
   text-align: center;
