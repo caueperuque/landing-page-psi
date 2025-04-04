@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import AmsterdamTwo from "../../assets/fonts/amsterdam-two-ttf.ttf";
+import bgMobile from "../../assets/Hero/bg-mobile.jpeg"
 
 export const HeroLayoutComponent = styled.div`
   background-color: ${(props) => props.theme["beige-700"]};
@@ -9,12 +10,13 @@ export const HeroLayoutComponent = styled.div`
   align-items: center;
 
   hr {
-    z-index: 2;
-    width: 70%;
-    border: 0.5px solid ${(props) => props.theme["beige-600"]};
-    /* margin-bottom: 4rem; */
     position: absolute;
-    top: 28rem;
+    top: 53%;
+    left: 15%; //Se desejar centralizar horizontalmente com 70% de largura
+    width: 70%;
+    transform: translateY(-54%);
+    border: 0.5px solid ${(props) => props.theme["beige-600"]};
+    z-index: 2;
     opacity: 1;
   }
 
@@ -33,6 +35,30 @@ export const HeroLayoutComponent = styled.div`
     font-size: 3rem;
     font-family: "AmsterdamTwo", sans-serif;
   }
+
+  /* iPhone 11 Pro, iPhone X, iPhone XS */
+  @media (max-width: 375px) {
+    hr {
+      top: 54%;
+    }
+  }
+
+  /* iPhone 12, iPhone 13, iPhone 14 */
+  @media (max-width: 390px) {
+  }
+
+  /* Galaxy S20, Galaxy S21, Galaxy S22 */
+  @media (max-width: 412px) {
+  }
+
+  /* iPhone 14 Pro, iPhone 14 Pro Max */
+  @media (max-width: 430px) {
+   
+  }
+
+  /* Galaxy S20 Ultra, Galaxy S21 Ultra, Galaxy S22 Ultra */
+  @media (max-width: 440px) {
+  }
 `;
 
 export const HeroBackgroundImage = styled.div`
@@ -41,7 +67,7 @@ export const HeroBackgroundImage = styled.div`
   height: 100vh;
   width: 100%;
   position: absolute;
-  background-image: url("/src/components/Hero/bg-mobile.jpeg");
+  background-image: url(${bgMobile});
   background-size: cover;
   opacity: 0.1;
 `;
