@@ -1,5 +1,11 @@
+import { AboutMe } from "./components/AboutMe";
+import { Hero } from "./components/Hero";
+
 export const Home = () => {
-    return (
-        <h1>oi</h1>
-    )
-}
+  return (
+    <>
+      <Hero />
+      <AboutMe />
+    </>
+  );
+};
