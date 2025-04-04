@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import AmsterdamTwo from "../../assets/fonts/amsterdam-two-ttf.ttf";
+import bgMobile from "../../assets/Hero/bg-mobile.jpeg"
 
 export const HeroLayoutComponent = styled.div`
   background-color: ${(props) => props.theme["beige-700"]};
@@ -66,7 +67,7 @@ export const HeroBackgroundImage = styled.div`
   height: 100vh;
   width: 100%;
   position: absolute;
-  background-image: url("/src/components/Hero/bg-mobile.jpeg");
+  background-image: url(${bgMobile});
   background-size: cover;
   opacity: 0.1;
 `;
