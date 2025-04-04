@@ -2,12 +2,44 @@ import styled from "styled-components";
 
 export const AboutMeLayoutComponent = styled.section`
   padding: 1rem;
-  h1, p, span {
+
+  h1,
+  p,
+  span {
     font-family: "Poppins";
   }
 
   p {
     font-size: 13px;
+  }
+
+  h1,
+  span {
+    text-align: center;
+  }
+
+  span {
+    margin-top: 0.3rem;
+    display: inline-block; /* Permite aplicar margin auto */
+    position: relative;
+    padding-bottom: 8px;
+    font-size: 1rem;
+
+    /* Pseudo-elemento para o traçado */
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px; /* Espessura da linha */
+      background: linear-gradient(
+        90deg,
+        transparent,
+        ${(props) => props.theme["beige-600"]},
+        transparent
+      );
+    }
   }
 
   /* iPhone 11 Pro, iPhone X, iPhone XS */
@@ -39,6 +71,7 @@ export const AboutMeContentComponent = styled.div`
 `;
 
 export const AboutMeTextHeaderComponent = styled.div`
+  text-align: center;
   margin-bottom: 1rem;
 `;
 
@@ -51,6 +84,7 @@ export const TextContentComponent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 0.3rem;
 `;
 
 export const ImageComponent = styled.div`
