@@ -6,13 +6,15 @@ import {
   ImageComponent,
   TextContentComponent,
 } from "./styles";
+import ProfileImg from "../../assets/AboutMe/profile.jpeg"
+
 
 export const AboutMe = () => {
   return (
     <AboutMeLayoutComponent>
       <AboutMeContentComponent>
         <ImageComponent>
-          <img src="/src/components/AboutMe/profile.jpeg" />
+          <img src={ProfileImg} />
         </ImageComponent>
         <AboutMeTextComponent>
           <AboutMeTextHeaderComponent>
