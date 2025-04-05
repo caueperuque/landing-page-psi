@@ -3,6 +3,7 @@ import {
   AboutMeLayoutComponent,
   AboutMeTextComponent,
   AboutMeTextHeaderComponent,
+  Divisor,
   ImageComponent,
   TextContentComponent,
 } from "./styles";
@@ -20,6 +21,7 @@ export const AboutMe = () => {
           <AboutMeTextHeaderComponent>
             <h1>Sobre mim</h1>
             <span>CRP: 06/133754</span>
+            <Divisor />
           </AboutMeTextHeaderComponent>
           <TextContentComponent>
             <p>

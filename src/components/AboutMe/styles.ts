@@ -24,22 +24,6 @@ export const AboutMeLayoutComponent = styled.section`
     position: relative;
     padding-bottom: 8px;
     font-size: 1rem;
-
-    /* Pseudo-elemento para o traçado */
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 4px; /* Espessura da linha */
-      background: linear-gradient(
-        90deg,
-        transparent,
-        ${(props) => props.theme["beige-600"]},
-        transparent
-      );
-    }
   }
 
   /* iPhone 11 Pro, iPhone X, iPhone XS */
@@ -66,12 +50,20 @@ export const AboutMeLayoutComponent = styled.section`
   }
 `;
 
+export const Divisor = styled.div`
+  border: 1px solid ${(props) => props.theme["beige-400"]};
+  width: 100%;
+  text-align: center;
+  /* height: 20px; Ajuste conforme necessário */
+`;
+
 export const AboutMeContentComponent = styled.div`
- background: linear-gradient(
+  background: linear-gradient(
     180deg,
     ${(props) => props.theme["beige-300"]} 0%,
     ${(props) => props.theme["beige-400"]} 100%
-  );`;
+  );
+`;
 
 export const AboutMeTextHeaderComponent = styled.div`
   text-align: center;
