@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FAQCardComponent } from "../styles";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
-type FAQItemProps = {
+export interface FAQItemProps {
   question: string;
   answer: string;
   icon: ReactElement;
