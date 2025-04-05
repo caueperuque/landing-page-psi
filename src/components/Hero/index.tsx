@@ -1,14 +1,20 @@
-import { HeroBackgroundImage, HeroContentComponent, HeroLayoutComponent } from "./styles";
+import {
+  HeroBackgroundImage,
+  HeroContentComponent,
+  HeroLayoutComponent,
+  HeroParagraph,
+  SignatureWrapper,
+} from "./styles";
 
-export const Hero = () => {
-  return (
-    <HeroLayoutComponent>
-      <HeroContentComponent>
-        <HeroBackgroundImage />
+export const Hero = () => (
+  <HeroLayoutComponent>
+    <HeroBackgroundImage />
+    <HeroContentComponent>
+      <SignatureWrapper>
         <h1>Thais Araujo</h1>
         <hr />
-        <p>psicóloga e psicanalista</p>
-      </HeroContentComponent>
-    </HeroLayoutComponent>
-  );
-};
+      </SignatureWrapper>
+      <HeroParagraph>psicóloga e psicanalista</HeroParagraph>
+    </HeroContentComponent>
+  </HeroLayoutComponent>
+);
