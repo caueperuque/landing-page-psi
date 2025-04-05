@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import {
+    Button,
   ContactContentComponent,
   ContactLayoutComponent,
   DataContactComponent,
@@ -76,7 +77,7 @@ export const SendMail = () => {
             rows={10}
             placeholder="MENSAGEM"
           />
-          <button type="submit">Enviar</button>
+          <Button type="submit">Enviar</Button>
         </FormComponent>
       </ContactContentComponent>
     </ContactLayoutComponent>

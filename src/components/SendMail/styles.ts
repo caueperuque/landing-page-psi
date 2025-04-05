@@ -33,13 +33,11 @@ export const ContactContentComponent = styled.div`
   padding: 1rem 1rem;
 `;
 
-export const TitleComponent = styled.div`
-`
+export const TitleComponent = styled.div``;
 
 export const Divisor = styled.div`
   border: 1px solid ${(props) => props.theme["beige-400"]};
   width: 30%;
-  /* height: 20px; Ajuste conforme necessário */
 `;
 
 export const DataContactComponent = styled.div`
@@ -76,5 +74,14 @@ export const InputComponent = styled.input`
 
 export const TextAreaComponent = styled.textarea`
   font-size: 1rem;
+  font-family: "Poppins";
+`;
+
+export const Button = styled.button`
+  background-color: ${(props) => props.theme["beige-600"]};
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: ${(props) => props.theme["gray-300"]};
   font-family: "Poppins";
 `;
