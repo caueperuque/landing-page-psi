@@ -1,9 +1,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import * as emailjs from "emailjs-com"
 import { z } from "zod";
 import { MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import {
-    Button,
+  Button,
   ContactContentComponent,
   ContactLayoutComponent,
   DataContactComponent,
@@ -15,12 +16,12 @@ import {
   TitleComponent,
 } from "./styles";
 import { FaWhatsapp } from "react-icons/fa";
-export const SendMail = () => {
+export const Contact = () => {
   const mailSchema = z.object({
     name: z.string(),
     mail: z.string(),
-    text: z.string().min(10),
-    phone: z.string().min(16).max(15),
+    text: z.string(),
+    phone: z.string(),
   });
 
   type MailForm = z.infer<typeof mailSchema>;
@@ -28,13 +29,35 @@ export const SendMail = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<MailForm>({
     resolver: zodResolver(mailSchema),
   });
 
-  const onSubmit: SubmitHandler<MailForm> = (data) => console.log(data, errors);
+  const onSubmit = async (data: MailForm) => {
+    console.log(data);
+    try {
+      const templateParams = {
+        name: data.name,
+        email: data.mail,
+        phone: data.phone,
+        time: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
+        text: data.text,
+      };
 
+      await emailjs.send(
+        "service_a4c9obg", // Substitua pelo seu Service ID
+        "template_gkjbrg2", // Substitua pelo seu Template ID
+        templateParams,
+        "mDVUAYqSNNVEKZwqg" // Substitua pelo seu User ID
+      );
+
+      alert("E-mail enviado com sucesso!");
+    } catch (error) {
+      console.error("Erro ao enviar e-mail:", error);
+      alert("Ocorreu um erro ao enviar o e-mail. Tente novamente mais tarde.");
+    }
+  };
   return (
     <ContactLayoutComponent>
       <ContactContentComponent>
