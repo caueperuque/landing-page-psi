@@ -37,8 +37,9 @@ export const FAQ = () => {
 
   return (
     <FAQLayoutComponent>
-      {questions.map((question) => (
+      {questions.map((question, index) => (
         <FAQItem
+          key={index}
           icon={question.icon}
           question={question.question}
           answer={question.answer}
