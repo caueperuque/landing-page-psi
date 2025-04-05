@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/outline";
 import { FAQCardComponent } from "../styles";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 type FAQItemProps = {
   question: string;
   answer: string;
+  icon: ReactElement;
 };
 
-export const FAQItem = ({ question, answer }: FAQItemProps) => {
+export const FAQItem = ({ question, answer, icon }: FAQItemProps) => {
   const [open, setOpen] = useState(false);
   const direction = open ? 1 : -1;
 
@@ -42,7 +42,7 @@ export const FAQItem = ({ question, answer }: FAQItemProps) => {
             transition={{ duration: 0.25 }}
             className="faq-content"
           >
-            <ChatBubbleLeftRightIcon strokeWidth={0.5} />
+            {icon}
             <h2>{question}</h2>
           </motion.div>
         ) : (
