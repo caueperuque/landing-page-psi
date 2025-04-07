@@ -22,7 +22,7 @@ export const HeroBackgroundImage = styled.div`
   background-image: url(${bgMobile});
   background-size: cover;
   background-position: center;
-  opacity: 0.1; /* mantém o efeito de opacidade */
+  opacity: 0.1;
 `;
 
 export const HeroContentComponent = styled.div`

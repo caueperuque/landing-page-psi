@@ -12,25 +12,25 @@ export const FAQ = () => {
     {
       question: "Como funcionam as sessões?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue nulla metus, ut rhoncus est mattis imperdiet. Maecenas nec nulla sit amet dui maximus iaculis in vitae tellus. Quisque tincidunt eros convallis tristique tincidunt. Suspendisse potenti. Curabitur iaculis ut eros feugiat maximus. Suspendisse potenti.",
+        "O atendimento clínico ocorre em sessões com duração de até 50 minutos, podendo ser uma ou mais vezes na semana.",
       icon: <ChatBubbleLeftRightIcon strokeWidth={0.5} />,
     },
     {
       question: "Você atende online?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue nulla metus, ut rhoncus est mattis imperdiet. Maecenas nec nulla sit amet dui maximus iaculis in vitae tellus. Quisque tincidunt eros convallis tristique tincidunt. Suspendisse potenti. Curabitur iaculis ut eros feugiat maximus. Suspendisse potenti.",
+        "Sim. Atendo online e presencialmente na cidade de Presidente Prudente - SP.",
       icon: <ComputerDesktopIcon strokeWidth={0.5} />,
     },
     {
       question: "Você atende por convênio?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue nulla metus, ut rhoncus est mattis imperdiet. Maecenas nec nulla sit amet dui maximus iaculis in vitae tellus. Quisque tincidunt eros convallis tristique tincidunt. Suspendisse potenti. Curabitur iaculis ut eros feugiat maximus. Suspendisse potenti.",
+        "Não. Não atendo por nenhum convênio, apenas particular (emito recibo para reembolsos).",
       icon: <QuestionMarkCircleIcon strokeWidth={0.5} />,
     },
     {
       question: "Qual o valor?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue nulla metus, ut rhoncus est mattis imperdiet. Maecenas nec nulla sit amet dui maximus iaculis in vitae tellus. Quisque tincidunt eros convallis tristique tincidunt. Suspendisse potenti. Curabitur iaculis ut eros feugiat maximus. Suspendisse potenti.",
+        "O valor das sessões, e a forma de pagamento são combinados com cada paciente, de preferência no primeiro atendimento. Será acordado um valor possível para ambos.",
       icon: <CurrencyDollarIcon strokeWidth={0.5} />,
     },
   ];
