@@ -35,7 +35,6 @@ export const Contact = () => {
   });
 
   const onSubmit = async (data: MailForm) => {
-    console.log(data);
     try {
       const templateParams = {
         name: data.name,
