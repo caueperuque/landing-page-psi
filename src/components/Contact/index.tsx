@@ -15,7 +15,7 @@ import {
   TextAreaComponent,
   TitleComponent,
 } from "./styles";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 export const Contact = () => {
   const mailSchema = z.object({
     name: z.string(),
@@ -83,7 +83,18 @@ export const Contact = () => {
               target="_blank"
             >
               <FaWhatsapp style={{ fontSize: "1.2rem" }} />
-              <p>(18) 99666-7981</p>
+              <p>Entrar em contato</p>
+            </a>
+          </DataContactContentComponent>
+
+          <DataContactContentComponent>
+            <a
+              href="https://www.instagram.com/thaisaraujopsic/"
+              className="social-icon"
+              target="_blank"
+            >
+              <FaInstagram style={{ fontSize: "1.2rem" }} />
+              <p>@thaisaraujopsic</p>
             </a>
           </DataContactContentComponent>
         </DataContactComponent>
