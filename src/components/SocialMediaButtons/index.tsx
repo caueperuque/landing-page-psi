@@ -9,10 +9,20 @@ export const SocialMediaButtons = () => {
   return (
     <SocialMediaButtonsLayout>
       <WhatsappButtonContainer>
-        <FaWhatsapp className="icon_social-media" />
+        <a
+          href="https://wa.me/+5518996667981"
+          target="_blank"
+        >
+          <FaWhatsapp className="icon_social-media" />
+        </a>
       </WhatsappButtonContainer>
       <InstagramButtonContainer>
-        <FaInstagram className="icon_social-media" />
+        <a
+          href="https://www.instagram.com/thaisaraujopsic/"
+          target="_blank"
+        >
+          <FaInstagram className="icon_social-media" />
+        </a>
       </InstagramButtonContainer>
     </SocialMediaButtonsLayout>
   );
