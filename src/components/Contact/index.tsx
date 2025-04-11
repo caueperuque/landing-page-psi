@@ -82,7 +82,7 @@ export const Contact = () => {
               target="_blank"
             >
               <FaWhatsapp style={{ fontSize: "1.2rem" }} />
-              <p>Entrar em contato</p>
+              <p>(18) 99666-7981</p>
             </a>
           </DataContactContentComponent>
 
