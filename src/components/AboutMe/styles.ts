@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export const AboutMeLayoutComponent = styled.section`
   padding: 1rem;
@@ -48,6 +48,11 @@ export const AboutMeLayoutComponent = styled.section`
   /* Galaxy S20 Ultra, Galaxy S21 Ultra, Galaxy S22 Ultra */
   @media (max-width: 440px) {
   }
+
+  @media (min-width: 720px) {
+    display: flex;
+    /* border: solid 3px red; */
+  }
 `;
 
 export const Divisor = styled.div`
@@ -63,6 +68,12 @@ export const AboutMeContentComponent = styled.div`
     ${(props) => props.theme["beige-300"]} 0%,
     ${(props) => props.theme["beige-400"]} 100%
   );
+
+  @media (min-width: 720px) {
+    display: flex;
+    align-items: center;
+    background: ${(props) => props.theme["beige-300"]};
+  }
 `;
 
 export const AboutMeTextHeaderComponent = styled.div`
@@ -87,5 +98,13 @@ export const ImageComponent = styled.div`
   img {
     margin-top: 1rem;
     width: 19rem;
+  }
+
+  @media (min-width: 720px) {
+    img {
+      margin-top: 0;
+      padding: 2em;
+      border-radius: 100%;
+    }
   }
 `;
