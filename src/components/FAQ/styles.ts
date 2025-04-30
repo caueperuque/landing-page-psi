@@ -6,6 +6,10 @@ export const FAQLayoutComponent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+  }
 `;
 
 export const FAQCardComponent = styled.div`
@@ -33,6 +37,10 @@ export const FAQCardComponent = styled.div`
     padding: 2rem;
     padding-right: 5rem;
     box-sizing: border-box;
+  }
+
+  @media (min-width: 720px) {
+    width: 100%;
   }
 
   svg {
