@@ -22,6 +22,11 @@ export const ContactLayoutComponent = styled.div`
       box-shadow: none;
     }
   }
+  /* 
+  @media (min-width: 720px) {
+    display: flex;
+    border: solid 3px red;
+  } */
 `;
 
 export const ContactContentComponent = styled.div`
@@ -31,9 +36,17 @@ export const ContactContentComponent = styled.div`
   flex-direction: column;
   gap: 2rem;
   padding: 1rem 1rem;
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10rem
+  }
 `;
 
-export const TitleComponent = styled.div``;
+export const TitleComponent = styled.div`
+  margin-bottom: 1.5rem;
+`;
 
 export const Divisor = styled.div`
   border: 1px solid ${(props) => props.theme["beige-400"]};
@@ -65,11 +78,23 @@ export const DataContactContentComponent = styled.div`
 export const FormComponent = styled.form`
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 2rem;
+`;
+
+export const FieldsComponent = styled.div`
+  @media (min-width: 720px) {
+    /* gap: 3rem; */
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const InputComponent = styled.input`
   font-size: 1rem;
+  @media (min-width: 720px) {
+    width: 32%;
+  }
 `;
 
 export const TextAreaComponent = styled.textarea`
@@ -84,4 +109,7 @@ export const Button = styled.button`
   border-radius: 5px;
   color: ${(props) => props.theme["gray-300"]};
   font-family: "Poppins";
+  @media (min-width: 720px) {
+    width: 100%;
+  }
 `;

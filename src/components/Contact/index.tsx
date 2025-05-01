@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as emailjs from "emailjs-com"
+import * as emailjs from "emailjs-com";
 import { z } from "zod";
 import { MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import {
@@ -10,6 +10,7 @@ import {
   DataContactComponent,
   DataContactContentComponent,
   Divisor,
+  FieldsComponent,
   FormComponent,
   InputComponent,
   TextAreaComponent,
@@ -40,7 +41,9 @@ export const Contact = () => {
         name: data.name,
         email: data.mail,
         phone: data.phone,
-        time: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
+        time: new Date().toLocaleString("pt-BR", {
+          timeZone: "America/Sao_Paulo",
+        }),
         text: data.text,
       };
 
@@ -60,57 +63,63 @@ export const Contact = () => {
   return (
     <ContactLayoutComponent>
       <ContactContentComponent>
-        <TitleComponent>
-          <h3>CONTATO</h3>
-          <Divisor />
-        </TitleComponent>
-        <DataContactComponent>
-          <DataContactContentComponent>
-            <MapPinIcon strokeWidth={1} width={"1.2rem"} />
-            <p>Presidente Prudente</p>
-          </DataContactContentComponent>
+        <div>
+          <TitleComponent>
+            <h3>CONTATO</h3>
+            <Divisor />
+          </TitleComponent>
+          <DataContactComponent>
+            <DataContactContentComponent>
+              <MapPinIcon strokeWidth={1} width={"1.2rem"} />
+              <p>Presidente Prudente</p>
+            </DataContactContentComponent>
 
-          <DataContactContentComponent>
-            <EnvelopeIcon strokeWidth={1} width={"1.2rem"} />
-            <p>psicothaisaraujo@gmail.com</p>
-          </DataContactContentComponent>
+            <DataContactContentComponent>
+              <EnvelopeIcon strokeWidth={1} width={"1.2rem"} />
+              <p>psicothaisaraujo@gmail.com</p>
+            </DataContactContentComponent>
 
-          <DataContactContentComponent>
-            <a
-              href="https://wa.me/+5518996667981"
-              className="social-icon"
-              target="_blank"
-            >
-              <FaWhatsapp style={{ fontSize: "1.2rem" }} />
-              <p>(18) 99666-7981</p>
-            </a>
-          </DataContactContentComponent>
+            <DataContactContentComponent>
+              <a
+                href="https://wa.me/+5518996667981"
+                className="social-icon"
+                target="_blank"
+              >
+                <FaWhatsapp style={{ fontSize: "1.2rem" }} />
+                <p>(18) 99666-7981</p>
+              </a>
+            </DataContactContentComponent>
 
-          <DataContactContentComponent>
-            <a
-              href="https://www.instagram.com/thaisaraujopsic/"
-              className="social-icon"
-              target="_blank"
-            >
-              <FaInstagram style={{ fontSize: "1.2rem" }} />
-              <p>@thaisaraujopsic</p>
-            </a>
-          </DataContactContentComponent>
-        </DataContactComponent>
+            <DataContactContentComponent>
+              <a
+                href="https://www.instagram.com/thaisaraujopsic/"
+                className="social-icon"
+                target="_blank"
+              >
+                <FaInstagram style={{ fontSize: "1.2rem" }} />
+                <p>@thaisaraujopsic</p>
+              </a>
+            </DataContactContentComponent>
+          </DataContactComponent>
+        </div>
 
         <FormComponent onSubmit={handleSubmit(onSubmit)}>
-          <InputComponent {...register("name")} placeholder="NOME" />
-          <InputComponent {...register("mail")} placeholder="E-MAIL" />
-          <InputComponent
-            {...register("phone")}
-            placeholder="(DDD) XXXXX-XXXX"
-          />
+          <FieldsComponent>
+            <InputComponent {...register("name")} placeholder="NOME" />
+            <InputComponent {...register("mail")} placeholder="E-MAIL" />
+            <InputComponent
+              {...register("phone")}
+              placeholder="(DDD) XXXXX-XXXX"
+            />
+          </FieldsComponent>
           <TextAreaComponent
             {...register("text")}
             rows={10}
             placeholder="MENSAGEM"
           />
-          <Button type="submit">Enviar</Button>
+          <div style={{ textAlign: 'center' }}>
+            <Button type="submit">Enviar</Button>
+          </div>
         </FormComponent>
       </ContactContentComponent>
     </ContactLayoutComponent>
