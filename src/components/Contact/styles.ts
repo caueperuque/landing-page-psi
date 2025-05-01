@@ -40,7 +40,8 @@ export const ContactContentComponent = styled.div`
   @media (min-width: 720px) {
     flex-direction: row;
     justify-content: space-between;
-    gap: 10rem
+    gap: 10rem;
+    padding: 2rem 2rem;
   }
 `;
 
@@ -51,6 +52,9 @@ export const TitleComponent = styled.div`
 export const Divisor = styled.div`
   border: 1px solid ${(props) => props.theme["beige-400"]};
   width: 30%;
+  @media (min-width: 720px) {
+    width: 50%;
+  }
 `;
 
 export const DataContactComponent = styled.div`
@@ -83,9 +87,12 @@ export const FormComponent = styled.form`
 `;
 
 export const FieldsComponent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   @media (min-width: 720px) {
-    /* gap: 3rem; */
-    display: flex;
+    flex-direction: row;
+
     justify-content: space-between;
   }
 `;
@@ -109,7 +116,8 @@ export const Button = styled.button`
   border-radius: 5px;
   color: ${(props) => props.theme["gray-300"]};
   font-family: "Poppins";
+  width: 100%;
   @media (min-width: 720px) {
-    width: 100%;
+    width: 30%;
   }
 `;
