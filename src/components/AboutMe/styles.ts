@@ -53,6 +53,12 @@ export const AboutMeLayoutComponent = styled.section`
     display: flex;
     /* border: solid 3px red; */
   }
+
+  @media (min-width: 720px) {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+  }
 `;
 
 export const Divisor = styled.div`
@@ -72,6 +78,7 @@ export const AboutMeContentComponent = styled.div`
   @media (min-width: 720px) {
     display: flex;
     align-items: center;
+    width: 50%;
     background: ${(props) => props.theme["beige-300"]};
   }
 `;
@@ -104,7 +111,7 @@ export const ImageComponent = styled.div`
     img {
       margin-top: 0;
       padding: 2em;
-      border-radius: 100%;
+      /* border-radius: 100%; */
     }
   }
 `;
