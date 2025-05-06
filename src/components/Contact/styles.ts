@@ -7,7 +7,7 @@ export const ContactLayoutComponent = styled.div`
   textarea {
     background-color: transparent;
     border: 1px solid ${(props) => props.theme["beige-400"]};
-    border-radius: 5px;
+    border-radius: 0.2rem;
     padding: 0.5rem;
     padding-left: 1rem;
     font-size: 0.8rem;
@@ -22,11 +22,12 @@ export const ContactLayoutComponent = styled.div`
       box-shadow: none;
     }
   }
-  /* 
+
   @media (min-width: 720px) {
     display: flex;
-    border: solid 3px red;
-  } */
+    justify-content: center;
+    padding: 4rem;
+  }
 `;
 
 export const ContactContentComponent = styled.div`
@@ -42,6 +43,8 @@ export const ContactContentComponent = styled.div`
     justify-content: space-between;
     gap: 10rem;
     padding: 2rem 2rem;
+    width: 50%;
+    border-radius: 0.2rem;
   }
 `;
 
@@ -84,6 +87,9 @@ export const FormComponent = styled.form`
   flex-direction: column;
   flex: 1;
   gap: 2rem;
+  @media (min-width: 720px) {
+    padding: 0.7rem;
+  }
 `;
 
 export const FieldsComponent = styled.div`
@@ -113,7 +119,7 @@ export const Button = styled.button`
   background-color: ${(props) => props.theme["beige-600"]};
   padding: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.2rem;
   color: ${(props) => props.theme["gray-300"]};
   font-family: "Poppins";
   width: 100%;

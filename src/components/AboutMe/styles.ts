@@ -81,6 +81,7 @@ export const AboutMeContentComponent = styled.div`
     align-items: center;
     width: 50%;
     background: ${(props) => props.theme["beige-300"]};
+    border-radius: 0.2rem;
   }
 `;
 
