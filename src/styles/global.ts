@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import bgMobile from "../assets/Hero/bg-mobile.jpeg";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -10,8 +11,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        /* background-color: ${(props) => props.theme["beige-400"]}; */
-        background-color: ${(props) => props.theme["white"]};
-        color: ${props => props.theme["gray-600"]}
+        /* background-image: url(${bgMobile}); */
+        background-color: ${(props) => props.theme["beige-500"]};
+
+        color: ${(props) => props.theme["gray-600"]}
     }
 `;

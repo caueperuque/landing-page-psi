@@ -1,5 +1,5 @@
 import {
-  HeroBackgroundImage,
+  // HeroBackgroundImage,
   HeroContentComponent,
   HeroLayoutComponent,
   HeroParagraph,
@@ -8,7 +8,7 @@ import {
 
 export const Hero = () => (
   <HeroLayoutComponent>
-    <HeroBackgroundImage />
+    {/* <HeroBackgroundImage /> */}
     <HeroContentComponent>
       <SignatureWrapper>
         <h1>Thais Araujo</h1>

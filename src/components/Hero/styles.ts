@@ -9,14 +9,16 @@ export const HeroLayoutComponent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: -3;
   background-color: ${(props) => props.theme["beige-700"]};
 `;
 
 export const HeroBackgroundImage = styled.div`
-  position: absolute;
+  /* position: absolute; estava assim */
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: -2;
   width: 100%;
   height: 100vh;
   background-image: url(${bgMobile});

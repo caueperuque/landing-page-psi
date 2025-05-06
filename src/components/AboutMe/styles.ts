@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const AboutMeLayoutComponent = styled.section`
+  z-index: 2;
   padding: 1rem;
 
   h1,
