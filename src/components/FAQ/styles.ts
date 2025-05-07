@@ -9,8 +9,10 @@ export const FAQLayoutComponent = styled.div`
 
   @media (min-width: 720px) {
     flex-direction: row;
-    justify-content: center;
-    gap: 5rem;
+    justify-content: space-between;
+    width: 95%;
+    padding: 0;
+    /* gap: 5rem; */
   }
 `;
 
@@ -42,7 +44,7 @@ export const FAQCardComponent = styled.div`
   }
 
   @media (min-width: 720px) {
-    width: 20%;
+    width: 23%;
     border-radius: 0.2rem;
   }
 

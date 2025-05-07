@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const AboutMeLayoutComponent = styled.section`
   z-index: 2;
-  padding: 1rem;
+  /* padding: 1rem; */
 
   h1,
   p,
@@ -79,7 +79,7 @@ export const AboutMeContentComponent = styled.div`
   @media (min-width: 720px) {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 95%;
     background: ${(props) => props.theme["beige-300"]};
     border-radius: 0.2rem;
     padding: 2rem;

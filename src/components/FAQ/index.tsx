@@ -36,15 +36,17 @@ export const FAQ = () => {
   ];
 
   return (
-    <FAQLayoutComponent>
-      {questions.map((question, index) => (
-        <FAQItem
-          key={index}
-          icon={question.icon}
-          question={question.question}
-          answer={question.answer}
-        />
-      ))}
-    </FAQLayoutComponent>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <FAQLayoutComponent>
+        {questions.map((question, index) => (
+          <FAQItem
+            key={index}
+            icon={question.icon}
+            question={question.question}
+            answer={question.answer}
+          />
+        ))}
+      </FAQLayoutComponent>
+    </div>
   );
 };
