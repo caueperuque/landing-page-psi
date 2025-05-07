@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const FAQContainer = styled.div`
+  @media (min-width: 720px) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
 export const FAQLayoutComponent = styled.div`
   padding: 1rem;
   font-family: "Poppins";

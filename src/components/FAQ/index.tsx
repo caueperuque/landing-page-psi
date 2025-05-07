@@ -1,4 +1,4 @@
-import { FAQLayoutComponent } from "./styles";
+import { FAQContainer, FAQLayoutComponent } from "./styles";
 import { FAQItem, FAQItemProps } from "./components/FAQItem";
 import {
   ChatBubbleLeftRightIcon,
@@ -36,7 +36,7 @@ export const FAQ = () => {
   ];
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <FAQContainer>
       <FAQLayoutComponent>
         {questions.map((question, index) => (
           <FAQItem
@@ -47,6 +47,6 @@ export const FAQ = () => {
           />
         ))}
       </FAQLayoutComponent>
-    </div>
+    </FAQContainer>
   );
 };
