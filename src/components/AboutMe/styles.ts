@@ -59,6 +59,10 @@ export const AboutMeLayoutComponent = styled.section`
     display: flex;
     justify-content: center;
     margin-top: 4rem;
+
+    h1 {
+      text-align: left;
+    }
   }
 `;
 
@@ -89,6 +93,9 @@ export const AboutMeContentComponent = styled.div`
 export const AboutMeTextHeaderComponent = styled.div`
   text-align: center;
   margin-bottom: 1rem;
+  @media (min-width: 720px) {
+    text-align: left;
+  }
 `;
 
 export const AboutMeTextComponent = styled.div`
