@@ -26,7 +26,6 @@ export const ContactLayoutComponent = styled.div`
   @media (min-width: 720px) {
     display: flex;
     justify-content: center;
-    padding: 4rem;
   }
 `;
 

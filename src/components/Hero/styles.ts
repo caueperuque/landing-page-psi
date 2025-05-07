@@ -37,8 +37,8 @@ export const HeroContentComponent = styled.div`
 `;
 
 export const SignatureWrapper = styled.div`
-  position: relative;       /* referência para o hr */
-  display: inline-block;    /* ajusta ao tamanho do texto */
+  position: relative; /* referência para o hr */
+  display: inline-block; /* ajusta ao tamanho do texto */
   /* margin-bottom: 0; */
 
   h1 {
@@ -56,16 +56,20 @@ export const SignatureWrapper = styled.div`
       font-weight: 700;
       font-style: normal;
     }
+
+    @media (min-width: 720px) {
+      font-size: 5rem;
+    }
   }
 
   hr {
     position: absolute;
-    top: 78%;             
+    top: 78%;
     left: 0;
     width: 100%;
     border: none;
     border-top: 1px solid ${(props) => props.theme["beige-600"]};
-    opacity: 1;      
+    opacity: 1;
   }
 `;
 
@@ -76,4 +80,7 @@ export const HeroParagraph = styled.p`
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  @media (min-width: 720px) {
+    font-size: 1.5rem;
+  }
 `;

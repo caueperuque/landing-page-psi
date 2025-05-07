@@ -58,7 +58,7 @@ export const AboutMeLayoutComponent = styled.section`
   @media (min-width: 720px) {
     display: flex;
     justify-content: center;
-    padding: 4rem;
+    margin-top: 4rem;
   }
 `;
 
@@ -82,6 +82,7 @@ export const AboutMeContentComponent = styled.div`
     width: 50%;
     background: ${(props) => props.theme["beige-300"]};
     border-radius: 0.2rem;
+    padding: 2rem;
   }
 `;
 
