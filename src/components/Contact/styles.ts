@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const ContactLayoutComponent = styled.div`
-  padding: 1rem;
+  /* padding: 1rem; */
 
   input,
   textarea {
@@ -26,6 +26,7 @@ export const ContactLayoutComponent = styled.div`
   @media (min-width: 720px) {
     display: flex;
     justify-content: center;
+    margin-bottom: 4rem;
   }
 `;
 
@@ -42,7 +43,7 @@ export const ContactContentComponent = styled.div`
     justify-content: space-between;
     gap: 10rem;
     padding: 2rem 2rem;
-    width: 50%;
+    width: 95%;
     border-radius: 0.2rem;
   }
 `;
@@ -87,7 +88,7 @@ export const FormComponent = styled.form`
   flex: 1;
   gap: 2rem;
   @media (min-width: 720px) {
-    padding: 0.7rem;
+    padding: 1rem;
   }
 `;
 
@@ -97,7 +98,6 @@ export const FieldsComponent = styled.div`
   gap: 1rem;
   @media (min-width: 720px) {
     flex-direction: row;
-
     justify-content: space-between;
   }
 `;
