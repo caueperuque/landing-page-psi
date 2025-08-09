@@ -1,10 +1,6 @@
 import {
-  // HeroBackgroundImage,
-  HeroContentComponent,
-  HeroLayoutComponent,
-  HeroParagraph,
-  SignatureWrapper,
-} from "./styles";
+    HeroContentComponent, HeroLayoutComponent, HeroParagraph, SignatureWrapper
+} from './styles';
 
 export const Hero = () => (
   <HeroLayoutComponent>
@@ -14,7 +10,7 @@ export const Hero = () => (
         <h1>Thais Araujo</h1>
         <hr />
       </SignatureWrapper>
-      <HeroParagraph>psicóloga e psicanalista</HeroParagraph>
+      <HeroParagraph>Psicologia e Psicanálise</HeroParagraph>
     </HeroContentComponent>
   </HeroLayoutComponent>
 );
