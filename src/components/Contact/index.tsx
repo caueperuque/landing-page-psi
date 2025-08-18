@@ -166,7 +166,7 @@ export const Contact = () => {
         <FormComponent onSubmit={handleSubmit(onSubmit)}>
           <FieldsComponent>
             <InputComponent {...register("name")} placeholder="NOME" />
-            <InputComponent {...register("mail")} placeholder="E-MAIL" />
+            <InputComponent {...register("mail")} placeholder="E-MAIL" type="email" />
             <InputComponent
               {...register("phone")}
               value={valorTelefone}
