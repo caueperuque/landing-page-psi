@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
 
 export const ContactLayoutComponent = styled.div`
   /* padding: 1rem; */
@@ -115,6 +115,7 @@ export const TextAreaComponent = styled.textarea`
 `;
 
 export const Button = styled.button`
+  cursor: pointer;
   background-color: ${(props) => props.theme["beige-600"]};
   padding: 1rem;
   border: none;
@@ -122,7 +123,62 @@ export const Button = styled.button`
   color: ${(props) => props.theme["gray-300"]};
   font-family: "Poppins";
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    background-color: ${(props) => props.theme["beige-700"] || "#8B7355"};
+  }
+
   @media (min-width: 720px) {
     width: 30%;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+`;
+
+export const NotificacaoComponent = styled.div<{ tipo: 'sucesso' | 'erro' }>`
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: ${(props) => 
+    props.tipo === 'sucesso' ? '#4CAF50' : '#f44336'
+  };
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: "Poppins";
+  font-size: 0.9rem;
+  max-width: 350px;
+  z-index: 9999;
+  animation: slideIn 0.3s ease-out;
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 720px) {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
   }
 `;

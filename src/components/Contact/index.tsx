@@ -1,28 +1,29 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as emailjs from "emailjs-com";
-import { z } from "zod";
-import { MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import * as emailjs from 'emailjs-com';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { FaInstagram, FaSpinner, FaWhatsapp } from 'react-icons/fa';
+import { z } from 'zod';
+import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
-  Button,
-  ContactContentComponent,
-  ContactLayoutComponent,
-  DataContactComponent,
-  DataContactContentComponent,
-  Divisor,
-  FieldsComponent,
-  FormComponent,
-  InputComponent,
-  TextAreaComponent,
-  TitleComponent,
-} from "./styles";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+    Button, ContactContentComponent, ContactLayoutComponent, DataContactComponent,
+    DataContactContentComponent, Divisor, FieldsComponent, FormComponent, InputComponent,
+    NotificacaoComponent, TextAreaComponent, TitleComponent
+} from './styles';
+
 export const Contact = () => {
+  const [valorTelefone, setValorTelefone] = useState('');
+  const [estaEnviando, setEstaEnviando] = useState(false);
+  const [notificacao, setNotificacao] = useState<{
+    tipo: 'sucesso' | 'erro' | null;
+    mensagem: string;
+  }>({ tipo: null, mensagem: '' });
+
   const mailSchema = z.object({
-    name: z.string(),
-    mail: z.string(),
-    text: z.string(),
-    phone: z.string(),
+    name: z.string({required_error: "Nome é obrigatório"}),
+    mail: z.string({required_error: "E-mail é obrigatório"}),
+    text: z.string({required_error: "Mensagem é obrigatória"}),
+    phone: z.string({required_error: "Telefone é obrigatório"}),
   });
 
   type MailForm = z.infer<typeof mailSchema>;
@@ -30,12 +31,43 @@ export const Contact = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     // formState: { errors },
   } = useForm<MailForm>({
     resolver: zodResolver(mailSchema),
   });
 
+  const aplicarMascaraTelefone = (valor: string) => {
+    // Remove todos os caracteres não numéricos
+    const numeros = valor.replace(/\D/g, '');
+    
+    // Se não há números, retorna vazio
+    if (!numeros) return '';
+    
+    // Aplica a máscara baseada na quantidade de dígitos
+    if (numeros.length <= 2) {
+      return `(${numeros}`;
+    } else if (numeros.length <= 6) {
+      return `(${numeros.slice(0, 2)}) ${numeros.slice(2)}`;
+    } else if (numeros.length <= 10) {
+      // Telefone fixo: (DD) XXXX-XXXX
+      return `(${numeros.slice(0, 2)}) ${numeros.slice(2, 6)}-${numeros.slice(6)}`;
+    } else {
+      // Celular: (DD) XXXXX-XXXX
+      return `(${numeros.slice(0, 2)}) ${numeros.slice(2, 7)}-${numeros.slice(7, 11)}`;
+    }
+  };
+
+  const handleTelefoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const valorFormatado = aplicarMascaraTelefone(event.target.value);
+    setValorTelefone(valorFormatado);
+    setValue('phone', valorFormatado);
+  };
+
   const onSubmit = async (data: MailForm) => {
+    setEstaEnviando(true);
+    setNotificacao({ tipo: null, mensagem: '' });
+
     try {
       const templateParams = {
         name: data.name,
@@ -48,21 +80,49 @@ export const Contact = () => {
       };
 
       await emailjs.send(
-        "service_a4c9obg", // Substitua pelo seu Service ID
-        "template_gkjbrg2", // Substitua pelo seu Template ID
+        "service_yod2jvh", // Substitua pelo seu Service ID
+        "template_a1y7c03", // Substitua pelo seu Template ID
         templateParams,
-        "mDVUAYqSNNVEKZwqg" // Substitua pelo seu User ID
+        "a8oZ6v9cQubnxrWFh" // Substitua pelo seu User ID
       );
 
-      alert("E-mail enviado com sucesso!");
+      setNotificacao({
+        tipo: 'sucesso',
+        mensagem: 'E-mail enviado com sucesso! Entraremos em contato em breve.'
+      });
+      
+      // Limpa o formulário após envio bem-sucedido
+      setValorTelefone('');
+      setValue('name', '');
+      setValue('mail', '');
+      setValue('phone', '');
+      setValue('text', '');
+
     } catch (error) {
       console.error("Erro ao enviar e-mail:", error);
-      alert("Ocorreu um erro ao enviar o e-mail. Tente novamente mais tarde.");
+      setNotificacao({
+        tipo: 'erro',
+        mensagem: 'Ocorreu um erro ao enviar o e-mail. Tente novamente mais tarde.'
+      });
+    } finally {
+      setEstaEnviando(false);
+      
+      // Remove a notificação após 5 segundos
+      setTimeout(() => {
+        setNotificacao({ tipo: null, mensagem: '' });
+      }, 5000);
     }
   };
   return (
-    <ContactLayoutComponent>
-      <ContactContentComponent>
+    <>
+      {notificacao.tipo && (
+        <NotificacaoComponent tipo={notificacao.tipo}>
+          {notificacao.mensagem}
+        </NotificacaoComponent>
+      )}
+      
+      <ContactLayoutComponent>
+        <ContactContentComponent>
         <div>
           <TitleComponent>
             <h3>CONTATO</h3>
@@ -109,7 +169,10 @@ export const Contact = () => {
             <InputComponent {...register("mail")} placeholder="E-MAIL" />
             <InputComponent
               {...register("phone")}
+              value={valorTelefone}
+              onChange={handleTelefoneChange}
               placeholder="(DDD) XXXXX-XXXX"
+              maxLength={15}
             />
           </FieldsComponent>
           <TextAreaComponent
@@ -117,11 +180,25 @@ export const Contact = () => {
             rows={10}
             placeholder="MENSAGEM"
           />
-          <div style={{ textAlign: 'center' }}>
-            <Button type="submit">Enviar</Button>
+          <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
+            <Button type="submit" disabled={estaEnviando}>
+              {estaEnviando ? (
+                <>
+                  <FaSpinner style={{ 
+                    fontSize: '0.9rem', 
+                    marginRight: '0.5rem',
+                    animation: 'spin 1s linear infinite'
+                  }} />
+                  Enviando...
+                </>
+              ) : (
+                'Enviar'
+              )}
+            </Button>
           </div>
         </FormComponent>
-      </ContactContentComponent>
-    </ContactLayoutComponent>
+        </ContactContentComponent>
+      </ContactLayoutComponent>
+    </>
   );
 };
