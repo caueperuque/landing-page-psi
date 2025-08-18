@@ -1,14 +1,8 @@
+import ProfileImg from '../../assets/AboutMe/profile.jpeg';
 import {
-  AboutMeContentComponent,
-  AboutMeLayoutComponent,
-  AboutMeTextComponent,
-  AboutMeTextHeaderComponent,
-  Divisor,
-  ImageComponent,
-  TextContentComponent,
-} from "./styles";
-import ProfileImg from "../../assets/AboutMe/profile.jpeg"
-
+    AboutMeContentComponent, AboutMeLayoutComponent, AboutMeTextComponent,
+    AboutMeTextHeaderComponent, Divisor, ImageComponent, TextContentComponent
+} from './styles';
 
 export const AboutMe = () => {
   return (
@@ -25,30 +19,22 @@ export const AboutMe = () => {
           </AboutMeTextHeaderComponent>
           <TextContentComponent>
             <p>
-              Sou Psicóloga e Psicanalista, graduada pela UNOESTE (2011-2016),
-              com aperfeiçoamento da técnica e da escuta psicanalítica pela
-              SBPSP (2020-2022), e intuições como CEP, e IEPP. Como parte da
-              formação, cursei disciplinas e cursos sobre assistência social e
-              saúde mental pública (UNESP) com foco no manejo e técnica de casos
-              de sofrimento psíquicos graves (psicose).
+              Formada em Psicologia pela UNOESTE em 2016, atuo na clínica desde a graduação. Entre
+              2019 e 2024, trabalhei como psicóloga hospitalar em um hospital psiquiátrico público, uma
+              experiência que me deu uma compreensão aprofundada sobre o cuidado de pessoas com
+              sofrimentos psíquicos graves.
             </p>
             <p>
-              Entre 2019 e 2024 atuei no serviço de saúde pública (SUS), numa
-              equipe multidisciplinar de um hospital psiquiátrico, cuidando e
-              participando ativamente do tratamento de mulheres e homens adultos
-              em estado mental grave.
+              Interessada pela psicanálise desde antes da graduação, em 2020 iniciei meu primeiro curso de
+              formação como psicanalista pela SBPSP, e sigo me aprimorando através da mesma instituição, e de
+              outras com o mesmo rigor. Paralelamente, dediquei-me a aprofundar sobre a saúde mental pública
+              no SUAS e no SUS, e mantenho a participação em grupos de estudos, e discussões que permitam
+              aprimorar a minha escuta clínica, e a compreensão a respeito da contemporaneidade e seus
+              desafios.
             </p>
             <p>
-              Permaneço numa formação continuada, alinhada na perspectiva da
-              psicanálise inglesa, com interesse pela psicopatologia, e os
-              estudos do psiquismo desde seus primeiros anos de vida. Para além
-              da teoria e conceitos, compartilho um interesse particular pela
-              literatura, e logo pela escrita como uma expressão dos afetos, e a
-              sua universalidade.
-            </p>
-            <p>
-              Atualmente, atendo adolescentes e adultos, online e presencial no
-              meu consultório particular na cidade de Presidente Prudente - SP.
+              Atualmente, realizo atendimento individual para adolescentes e adultos, tanto online quanto
+              presencialmente em meu consultório em Presidente Prudente - SP.
             </p>
           </TextContentComponent>
         </AboutMeTextComponent>
