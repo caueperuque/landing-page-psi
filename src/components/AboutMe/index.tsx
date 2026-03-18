@@ -1,8 +1,13 @@
-import ProfileImg from '../../assets/AboutMe/profile.jpeg';
+import ProfileImg from "../../assets/AboutMe/profile.jpeg";
 import {
-    AboutMeContentComponent, AboutMeLayoutComponent, AboutMeTextComponent,
-    AboutMeTextHeaderComponent, Divisor, ImageComponent, TextContentComponent
-} from './styles';
+  AboutMeContentComponent,
+  AboutMeLayoutComponent,
+  AboutMeTextComponent,
+  AboutMeTextHeaderComponent,
+  Divisor,
+  ImageComponent,
+  TextContentComponent,
+} from "./styles";
 
 export const AboutMe = () => {
   return (
@@ -19,22 +24,30 @@ export const AboutMe = () => {
           </AboutMeTextHeaderComponent>
           <TextContentComponent>
             <p>
-              Formada em Psicologia pela UNOESTE em 2016, atuo na clínica desde a graduação. Entre
-              2019 e 2024, trabalhei como psicóloga hospitalar em um hospital psiquiátrico público, uma
-              experiência que me deu uma compreensão aprofundada sobre o cuidado de pessoas com
-              sofrimentos psíquicos graves.
+              Formada em Psicologia pela Unoeste em 2016, atuo na clínica desde
+              o meu primeiro ano de formação. Entre 2019 e 2024, para além da
+              prática em consultório, trabalhei como psicóloga hospitalar em um
+              hospital psiquiátrico público. Essa experiência me proporcionou um
+              repertório amplo no acompanhamento de pessoas em sofrimento mental
+              grave.
             </p>
             <p>
-              Interessada pela psicanálise desde antes da graduação, em 2020 iniciei meu primeiro curso de
-              formação como psicanalista pela SBPSP, e sigo me aprimorando através da mesma instituição, e de
-              outras com o mesmo rigor. Paralelamente, dediquei-me a aprofundar sobre a saúde mental pública
-              no SUAS e no SUS, e mantenho a participação em grupos de estudos, e discussões que permitam
-              aprimorar a minha escuta clínica, e a compreensão a respeito da contemporaneidade e seus
-              desafios.
+              Meu trabalho é orientado pela psicanálise, o que diferencia minha
+              escuta e minha compreensão sobre os modos de ser e as inúmeras
+              possibilidades de expressão do sofrer. Envolvida com estudos e
+              grupos de atividades psicanalíticas desde a graduação, iniciei em
+              2020 minha formação como psicanalista pela Sociedade Brasileira de
+              Psicanálise de São Paulo (SBPSP), instituição onde sigo em
+              constante aperfeiçoamento, ao lado de outras organizações filiadas
+              de rigor semelhante.
             </p>
             <p>
-              Atualmente, realizo atendimento individual para adolescentes e adultos, tanto online quanto
-              presencialmente em meu consultório em Presidente Prudente - SP.
+              Busco desenvolver minha escuta e minha compreensão acerca da mente
+              humana de forma crítica, atenta à realidade contemporânea, às
+              diversidades e aos atravessamentos sociais. Atualmente, realizo
+              atendimentos individuais para adolescentes e adultos, nas
+              modalidades online e presencial, em meu consultório em Presidente
+              Prudente.
             </p>
           </TextContentComponent>
         </AboutMeTextComponent>
