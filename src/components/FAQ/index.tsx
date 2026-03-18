@@ -12,25 +12,25 @@ export const FAQ = () => {
     {
       question: "Como funcionam as sessões?",
       answer:
-        "O atendimento clínico ocorre em sessões com duração de até 50 minutos, podendo ser uma ou mais vezes na semana.",
+        "As sessões têm duração de até 50 minutos e a frequência — que pode ser de uma ou mais vezes por semana — é estabelecida de acordo com a necessidade de cada processo. Esse ritmo é conversado durante as entrevistas iniciais, buscando sustentar um espaço de fala e escuta que respeite as possibilidades e tempo de cada paciente.",
       icon: <ChatBubbleLeftRightIcon strokeWidth={0.5} />,
     },
     {
       question: "Você atende online?",
       answer:
-        "Sim. Atendo online e presencialmente na cidade de Presidente Prudente - SP.",
+        "Sim. Realizo atendimentos em ambas as modalidades: presencialmente, em meu consultório em Presidente Prudente (SP), e online, através de plataformas de vídeo seguras que garantem o sigilo e a qualidade do encontro analítico",
       icon: <ComputerDesktopIcon strokeWidth={0.5} />,
     },
     {
       question: "Você atende por convênio?",
       answer:
-        "Não. Não atendo por nenhum convênio, apenas particular (emito recibo para reembolsos).",
+        "Não realizo atendimentos diretos por convênios, apenas na modalidade particular. No entanto, emito recibos e toda a documentação necessária para que você possa solicitar o reembolso junto ao seu plano de saúde, caso ele ofereça essa opção.",
       icon: <QuestionMarkCircleIcon strokeWidth={0.5} />,
     },
     {
       question: "Qual o valor?",
       answer:
-        "O valor das sessões, e a forma de pagamento são combinados com cada paciente, de preferência no primeiro atendimento. Será acordado um valor possível para ambos.",
+        "O valor das sessões, a frequência e a forma de pagamento são definidos em conjunto durante as entrevistas iniciais. Esse primeiro contato é fundamental para avaliarmos a demanda e estabelecermos os combinados que sustentarão o trabalho analítico.",
       icon: <CurrencyDollarIcon strokeWidth={0.5} />,
     },
   ];

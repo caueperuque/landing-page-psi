@@ -15,11 +15,12 @@ export const FAQLayoutComponent = styled.div`
   gap: 2rem;
 
   @media (min-width: 720px) {
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(250px, 1fr);
+    gap: 1rem;
     width: 95%;
     padding: 0;
-    /* gap: 5rem; */
   }
 `;
 
@@ -51,8 +52,9 @@ export const FAQCardComponent = styled.div`
   }
 
   @media (min-width: 720px) {
-    width: 23%;
-    border-radius: 0.2rem;
+    width: 100%;
+    border-radius: 0;
+    font-size: 0.875rem;
   }
 
   svg {
