@@ -11,7 +11,7 @@ export const PresentationLayoutComponent = styled.section`
   }
 
   h1 {
-    text-align: center;
+    text-align: left;
   }
 
   p,
@@ -35,13 +35,15 @@ export const PresentationContentComponent = styled.div`
   );
   padding: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 
   @media (min-width: 720px) {
+    flex-direction: row;
+    align-items: center;
     width: 95%;
     background: ${(props) => props.theme["beige-300"]};
     border-radius: 0.2rem;
-    padding: 3rem;
+    padding: 2rem;
   }
 `;
 
@@ -59,9 +61,30 @@ export const HeaderDivisor = styled.div`
 export const PresentationTextComponent = styled.div`
   text-align: left;
   width: 100%;
+  order: 1;
 
   @media (min-width: 720px) {
-    max-width: 900px;
+    padding: 2rem;
+  }
+`;
+
+export const ImageComponent = styled.div`
+  text-align: center;
+  order: 0;
+
+  img {
+    margin-top: 1rem;
+    width: 19rem;
+  }
+
+  @media (min-width: 720px) {
+    order: 2;
+    flex-shrink: 0;
+
+    img {
+      margin-top: 0;
+      padding: 2rem;
+    }
   }
 `;
 
@@ -73,7 +96,8 @@ export const TopicComponent = styled.section`
 
   h2 {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
+    /*font-weight: 600;*/
   }
 `;
 

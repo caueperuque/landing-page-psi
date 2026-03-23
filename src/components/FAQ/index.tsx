@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FAQContainer, FAQLayoutComponent } from "./styles";
 import { FAQItem, FAQItemProps } from "./components/FAQItem";
 import {
@@ -6,6 +7,7 @@ import {
   QuestionMarkCircleIcon,
   CurrencyDollarIcon,
 } from "@heroicons/react/24/outline";
+import { fadeInUp, staggerContainer } from "../../utils/animations";
 
 export const FAQ = () => {
   const questions: FAQItemProps[] = [
@@ -37,16 +39,25 @@ export const FAQ = () => {
 
   return (
     <FAQContainer>
-      <FAQLayoutComponent>
-        {questions.map((question, index) => (
-          <FAQItem
-            key={index}
-            icon={question.icon}
-            question={question.question}
-            answer={question.answer}
-          />
-        ))}
-      </FAQLayoutComponent>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        style={{ width: "100%", display: "flex", justifyContent: "center" }}
+      >
+        <FAQLayoutComponent>
+          {questions.map((question, index) => (
+            <motion.div key={index} variants={fadeInUp}>
+              <FAQItem
+                icon={question.icon}
+                question={question.question}
+                answer={question.answer}
+              />
+            </motion.div>
+          ))}
+        </FAQLayoutComponent>
+      </motion.div>
     </FAQContainer>
   );
 };

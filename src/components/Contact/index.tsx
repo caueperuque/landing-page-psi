@@ -1,10 +1,12 @@
 import * as emailjs from 'emailjs-com';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { FaInstagram, FaSpinner, FaWhatsapp } from 'react-icons/fa';
 import { z } from 'zod';
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { fadeInUp } from '../../utils/animations';
 import {
     Button, ContactContentComponent, ContactLayoutComponent, DataContactComponent,
     DataContactContentComponent, Divisor, FieldsComponent, FormComponent, InputComponent,
@@ -121,6 +123,12 @@ export const Contact = () => {
         </NotificacaoComponent>
       )}
       
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+      >
       <ContactLayoutComponent>
         <ContactContentComponent>
         <div>
@@ -199,6 +207,7 @@ export const Contact = () => {
         </FormComponent>
         </ContactContentComponent>
       </ContactLayoutComponent>
+      </motion.div>
     </>
   );
 };

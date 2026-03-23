@@ -1,11 +1,15 @@
 import { ReactNode, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import SalaImg from "../../assets/Presentation/sala.jpeg";
+import { fadeInUp, topicTransition } from "../../utils/animations";
 import {
   ArrowButton,
   BulletListComponent,
   Dot,
   DotsContainer,
   HeaderDivisor,
+  ImageComponent,
   NavigationComponent,
   PresentationContentComponent,
   PresentationLayoutComponent,
@@ -22,7 +26,7 @@ interface Topico {
 
 const topicos: Topico[] = [
   {
-    titulo: "A sessão de análise: um trabalho a dois",
+    titulo: "",
     conteudo: (
       <>
         <p>
@@ -128,55 +132,75 @@ export const Presentation = () => {
   };
 
   return (
-    <PresentationLayoutComponent>
-      <PresentationContentComponent>
-        <PresentationTextComponent>
-          <PresentationTextHeaderComponent>
-            <h1>Apresentação</h1>
-            <HeaderDivisor />
-          </PresentationTextHeaderComponent>
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+    >
+      <PresentationLayoutComponent>
+        <PresentationContentComponent>
+          <ImageComponent>
+            <img src={SalaImg} alt="Sala de atendimento" />
+          </ImageComponent>
+          <PresentationTextComponent>
+            <PresentationTextHeaderComponent>
+              <h1>A sessão de análise: um trabalho a dois</h1>
+              <HeaderDivisor />
+            </PresentationTextHeaderComponent>
 
-          <TopicComponent key={topicoAtual}>
-            <h2>{topico.titulo}</h2>
-            {topico.conteudo}
-          </TopicComponent>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={topicoAtual}
+                variants={topicTransition}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                <TopicComponent>
+                  <h2>{topico.titulo}</h2>
+                  {topico.conteudo}
+                </TopicComponent>
+              </motion.div>
+            </AnimatePresence>
 
-          <NavigationComponent aria-label="Navegação entre tópicos">
-            <ArrowButton
-              onClick={handleAnterior}
-              disabled={topicoAtual === 0}
-              aria-label="Tópico anterior"
-            >
-              <ChevronLeftIcon />
-            </ArrowButton>
+            <NavigationComponent aria-label="Navegação entre tópicos">
+              <ArrowButton
+                onClick={handleAnterior}
+                disabled={topicoAtual === 0}
+                aria-label="Tópico anterior"
+              >
+                <ChevronLeftIcon />
+              </ArrowButton>
 
-            <DotsContainer>
-              {topicos.map((_, index) => (
-                <Dot
-                  key={index}
-                  $ativo={index === topicoAtual}
-                  onClick={() => setTopicoAtual(index)}
-                  aria-label={`Ir para tópico ${index + 1}`}
-                />
-              ))}
-            </DotsContainer>
+              <DotsContainer>
+                {topicos.map((_, index) => (
+                  <Dot
+                    key={index}
+                    $ativo={index === topicoAtual}
+                    onClick={() => setTopicoAtual(index)}
+                    aria-label={`Ir para tópico ${index + 1}`}
+                  />
+                ))}
+              </DotsContainer>
 
-            <ArrowButton
-              onClick={handleProximo}
-              disabled={topicoAtual === totalTopicos - 1}
-              aria-label="Próximo tópico"
-            >
-              <ChevronRightIcon />
-            </ArrowButton>
-          </NavigationComponent>
+              <ArrowButton
+                onClick={handleProximo}
+                disabled={topicoAtual === totalTopicos - 1}
+                aria-label="Próximo tópico"
+              >
+                <ChevronRightIcon />
+              </ArrowButton>
+            </NavigationComponent>
 
-          <ReferenceText>
-            Texto de autoria própria. Referência bibliográfica: "Para que serve
-            uma análise? E outros ateliês." Marion Minerbo. Vol. 1. Editorial
-            Blucher, 2024.
-          </ReferenceText>
-        </PresentationTextComponent>
-      </PresentationContentComponent>
-    </PresentationLayoutComponent>
+            <ReferenceText>
+              Texto de autoria própria. Referência bibliográfica: "Para que serve
+              uma análise? E outros ateliês." Marion Minerbo. Vol. 1. Editoria
+              Blucher, 2024.
+            </ReferenceText>
+          </PresentationTextComponent>
+        </PresentationContentComponent>
+      </PresentationLayoutComponent>
+    </motion.div>
   );
 };

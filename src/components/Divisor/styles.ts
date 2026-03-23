@@ -12,8 +12,7 @@ export const DivisorContainer = styled.div`
 
 export const DivisorElement = styled.div`
   background-color: black;
-  border: solid 1px ${props => props.theme['beige-600']};
+  border: solid 1px ${(props) => props.theme["beige-600"]};
   border-radius: 0.125rem;
   text-align: center;
-  width: 95%;
 `;
