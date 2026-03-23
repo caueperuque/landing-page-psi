@@ -5,6 +5,7 @@ import { Contact } from "./components/Contact";
 import { SocialMediaButtons } from "./components/SocialMediaButtons";
 import { HeroBackgroundImage } from "./components/Hero/styles";
 import { Divisor } from "./components/Divisor";
+import { Presentation } from "./components/Presentation";
 
 export const Home = () => {
   return (
@@ -12,6 +13,8 @@ export const Home = () => {
       <HeroBackgroundImage />
       <SocialMediaButtons />
       <Hero />
+      <Presentation />
+      <Divisor />
       <AboutMe />
       <Divisor />
       <FAQ />
