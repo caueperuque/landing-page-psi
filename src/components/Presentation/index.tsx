@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import SalaImg from "../../assets/Presentation/sala.jpeg";
+// import SalaImg from "../../assets/Presentation/sala.jpeg";
 import { fadeInUp, topicTransition } from "../../utils/animations";
 import {
   ArrowButton,
@@ -9,7 +9,7 @@ import {
   Dot,
   DotsContainer,
   HeaderDivisor,
-  ImageComponent,
+  // ImageComponent,
   NavigationComponent,
   PresentationContentComponent,
   PresentationLayoutComponent,
