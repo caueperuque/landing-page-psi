@@ -13,6 +13,7 @@ export const FAQLayoutComponent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
 
   @media (min-width: 720px) {
     display: grid;
