@@ -91,8 +91,13 @@ export const AboutMeContentComponent = styled.div`
 `;
 
 export const AboutMeTextHeaderComponent = styled.div`
-  text-align: center;
+  text-align: left;
   margin-bottom: 1rem;
+
+  h1 {
+    text-align: left;
+  }
+
   @media (min-width: 720px) {
     text-align: left;
   }
