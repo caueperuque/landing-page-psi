@@ -140,9 +140,9 @@ export const Presentation = () => {
     >
       <PresentationLayoutComponent>
         <PresentationContentComponent>
-          <ImageComponent>
+          {/*<ImageComponent>
             <img src={SalaImg} alt="Sala de atendimento" />
-          </ImageComponent>
+          </ImageComponent>*/}
           <PresentationTextComponent>
             <PresentationTextHeaderComponent>
               <h1>A sessão de análise: um trabalho a dois</h1>
@@ -194,9 +194,9 @@ export const Presentation = () => {
             </NavigationComponent>
 
             <ReferenceText>
-              Texto de autoria própria. Referência bibliográfica: "Para que serve
-              uma análise? E outros ateliês." Marion Minerbo. Vol. 1. Editoria
-              Blucher, 2024.
+              Texto de autoria própria. Referência bibliográfica: "Para que
+              serve uma análise? E outros ateliês." Marion Minerbo. Vol. 1.
+              Editora Blucher, 2024.
             </ReferenceText>
           </PresentationTextComponent>
         </PresentationContentComponent>
